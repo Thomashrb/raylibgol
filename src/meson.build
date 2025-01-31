@@ -1,8 +1,8 @@
-src = 'utils.cpp'
-src_w_main = files([src]) + files(['main.cpp'])
+srcs = ['utils.cpp', 'rules.cpp']
+src_w_main = files(srcs) + files(['main.cpp'])
 
 lib = shared_library('gameoflifelib',
-                        src,
+                        srcs,
                         include_directories : inc,
                         dependencies : [],
                         install : true)

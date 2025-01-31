@@ -1,1 +1,1 @@
-install_headers('utils.h')
+install_headers(['utils.h', 'rules.h'])
