@@ -5,6 +5,8 @@ Render game of life using raylib
 
 ```
 $ meson setup build
+$ meson test -C build
+
 $ ninja -C build && ./build/test/testexe
 $ ninja -C build && ./build/src/gameoflife
 ```

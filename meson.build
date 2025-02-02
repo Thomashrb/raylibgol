@@ -3,8 +3,8 @@ project(
   'cpp',
   version : '0.1')
 
-catch2_dep = dependency('catch2-with-main', version: '>=3.7.1')
-raylib_dep = dependency('raylib', version: '>=5.5')
+raylib_lib = dependency('raylib', version: '>=5.5')
+catch2_lib = subproject('catch2').get_variable('catch2_with_main_dep')
 
 inc = include_directories('include')
 

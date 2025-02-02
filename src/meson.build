@@ -11,6 +11,6 @@ executable(
     meson.project_name(),
     sources: src_w_main,
     include_directories : inc,
-    dependencies: raylib_dep,
+    dependencies: raylib_lib,
     install: true
 )
