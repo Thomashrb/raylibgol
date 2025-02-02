@@ -3,8 +3,17 @@ project(
   'cpp',
   version : '0.1')
 
-raylib_lib = dependency('raylib', version: '>=5.5')
 catch2_lib = subproject('catch2').get_variable('catch2_with_main_dep')
+# Raylib start
+cmake = import('cmake')
+raylib_opts = cmake.subproject_options()
+raylib_opts.set_install(false)
+raylib_opts.add_cmake_defines({
+  'BUILD_EXAMPLES': 'OFF',
+  'PLATFORM': 'Desktop',
+})
+raylib_lib = cmake.subproject('raylib', options: raylib_opts).dependency('raylib')
+# Raylib end
 
 inc = include_directories('include')
 
